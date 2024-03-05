@@ -8,21 +8,28 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 60vh;
     }
     #rudraksha {
         font-size: 20px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 5px;
     }
     #counter {
         font-size: 18px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 5px;
     }
     #mantra {
-        font-size: 16px;
+        font-size: 26px;
+        font-weight: bold;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 5px;
         overflow: hidden;
         white-space: nowrap;
         color: #333;
@@ -46,23 +53,23 @@
         top: 2px;
         left: 7px;
     }
+    .tap-btn {
+        text-align: center;
+        margin-top: 10px;
+        font-size:15px
+    }
     button {
         background-color: #4CAF50;
         color: white;
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 20px 43px;
+        font-size: 27px;
         border: none;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 8px;
         transition: background-color 0.3s;
     }
     button:hover {
         background-color: #45a049;
-    }
-    .tap-btn{
-        margin-top:2rem;
-        margin-bottom:2rem
-
     }
 </style>
 </head>
@@ -70,19 +77,19 @@
 <div id="rudraksha">
     <div id="points"></div>
 </div>
-<div class="tap-btn" style="text-align: center;"> 
+
+<div class="tap-btn"> 
     <button onclick="tap()">Tap</button>
 </div>
 
 <div id="mantra"> 
-    <marquee behavior="scroll" direction="left" style="font-size: 18px;">Om Namah Shivaya</marquee>
+    <marquee behavior="scroll" direction="left">Om Namah Shivay</marquee>
 </div>
 
 <div id="counter"> 
-    <h2 style="text-align: center; color: #333; font-weight: bold;">Mala Count: <span id="malaCount" style="font-weight: bold;">0</span></h2>
+    <h2>Mala Count: <span id="malaCount">0</span></h2>
 </div>
 
-<script src = "script.js">
-</script>
+<script src="script.js"></script>
 </body>
 </html>
