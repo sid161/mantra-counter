@@ -33,6 +33,7 @@
         overflow: hidden;
         white-space: nowrap;
         color: #333;
+        height: 40px; /* Set a fixed height to prevent bouncing */
     }
     .rudraksha-point {
         width: 20px;
@@ -56,39 +57,65 @@
     .tap-btn {
         text-align: center;
         margin-top: 10px;
-        font-size:15px
+        font-size:15px;
     }
     button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 20px 43px;
-        font-size: 27px;
-        border: none;
-        cursor: pointer;
-        border-radius: 8px;
-        transition: background-color 0.3s;
-    }
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 43px;
+    font-size: 27px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    min-width: 100px; /* Set a fixed width to prevent bouncing */
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s;
+}
+
     button:hover {
         background-color: #45a049;
     }
+    #invisible-content {
+    visibility: hidden;
+    height: 0;
+}
+.tap-btn {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    position: relative; /* Ensure button position is relative to this container */
+}
+#tapCounter{
+    font-size:20px;
+    font-weight:bold;
+}
+
+  
 </style>
 </head>
 <body>
 <div id="rudraksha">
     <div id="points"></div>
 </div>
+<!-- Invisible element to reserve space for maximum content size -->
+<div id="invisible-content" style="visibility: hidden;">
+    <!-- Add content here that could potentially change size -->
+</div>
 
-<div class="tap-btn"> 
+
+<div class="tap-btn" style="height: 80px;"> 
     <button onclick="tap()">Tap</button>
+    <p>Tap Counter: <span id="tapCounter">0</span></p>
 </div>
 
 <div id="mantra"> 
-    <marquee behavior="scroll" direction="left">Om Namah Shivay</marquee>
+    <p id="mantraText" style="font-size: 26px; font-weight: bold; text-align: center; margin-top: 5px; color: #333; display: none;">Om Namah Shivay</p>
 </div>
 
 <div id="counter"> 
     <h2>Mala Count: <span id="malaCount">0</span></h2>
 </div>
+
 
 <script src="script.js"></script>
 </body>
